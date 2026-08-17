@@ -1,0 +1,228 @@
+->tsconfig.json — TypeScript Configuration
+
+    - When we work with TypeScript, we usually have a file called tsconfig.json.
+    - It tells TypeScript how we want our TypeScript code to be compiled into JavaScript.
+    - You can think of it as the configuration file for your TypeScript project.
+
+->We can create it using: npx tsc --init
+  This creates: tsconfig.json
+
+Basic Example:
+    A simple tsconfig.json can look like this:
+
+    {
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "CommonJS",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "strict": true
+    }
+    }
+
+Let's understand the important options.
+
+1. target
+"target": "ES2020"
+
+Specifies which version of JavaScript TypeScript should generate.
+
+For example:
+
+"target": "ES5"
+
+TypeScript will convert modern TypeScript/JavaScript features into older JavaScript.
+
+Common values:
+
+ES5
+ES2015
+ES2020
+ES2022
+ESNext
+
+For modern applications, ES2020 or newer is commonly used.
+
+2. module
+"module": "CommonJS"
+
+Determines which module system the generated JavaScript should use.
+
+For example:
+
+import { add } from "./math";
+
+Depending on the configuration, TypeScript can compile this using CommonJS or modern ES modules.
+
+Common options include:
+
+CommonJS
+ES2020
+ESNext
+NodeNext
+3. rootDir
+"rootDir": "./src"
+
+Tells TypeScript:
+
+"My source TypeScript files are inside this folder."
+
+For example:
+
+project/
+├── src/
+│   ├── index.ts
+│   └── utils.ts
+└── tsconfig.json
+
+Here:
+
+"rootDir": "./src"
+4. outDir
+"outDir": "./dist"
+
+Specifies where the compiled JavaScript files should be placed.
+
+For example:
+
+src/
+└── index.ts
+
+After:
+
+npx tsc
+
+You might get:
+
+dist/
+└── index.js
+
+So:
+
+src  →  TypeScript source
+dist →  Compiled JavaScript
+5. strict
+"strict": true
+
+This is one of the most important options.
+
+It enables a group of strict type-checking rules.
+
+For example:
+
+let username: string = "Muazim";
+
+
+username = 10; // ❌ Error
+
+With strict checking enabled, TypeScript becomes much more careful about potential errors.
+
+For most TypeScript projects, keeping:
+
+"strict": true
+
+is a good practice.
+
+6. esModuleInterop
+"esModuleInterop": true
+
+This helps TypeScript work more smoothly with CommonJS modules and their default imports.
+
+For example:
+
+import express from "express";
+
+It can be useful when working with Node.js packages that were originally designed around CommonJS.
+
+7. include
+"include": ["src"]
+
+Tells TypeScript which files/folders should be included in the compilation.
+
+For example:
+
+{
+  "include": ["src"]
+}
+
+This means TypeScript will look inside the src directory.
+
+You can also specify patterns:
+
+"include": ["src/**/*.ts"]
+8. exclude
+"exclude": ["node_modules", "dist"]
+
+Tells TypeScript which files/folders should not be included.
+
+For example:
+
+{
+  "exclude": ["node_modules", "dist"]
+}
+
+Usually, node_modules doesn't need to be compiled.
+
+A Practical tsconfig.json
+
+For a simple Node.js TypeScript project, you could have:
+
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
+
+Then your project can look like:
+
+typescript-with-me/
+│
+├── src/
+│   └── index.ts
+│
+├── dist/
+│   └── index.js
+│
+├── package.json
+└── tsconfig.json
+The easiest way to remember it
+
+Think of tsconfig.json as answering these questions:
+
+What JavaScript version should I generate?
+        ↓
+      target
+
+
+What module system should I use?
+        ↓
+      module
+
+
+Where is my source code?
+        ↓
+      rootDir
+
+
+Where should compiled code go?
+        ↓
+      outDir
+
+
+How strict should TypeScript be?
+        ↓
+      strict
+
+
+Which files should I compile?
+        ↓
+      include / exclude
+
+In short: tsconfig.json is the instruction manual that tells the TypeScript compiler how to treat and compile your project.
