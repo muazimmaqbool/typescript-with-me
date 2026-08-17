@@ -1,0 +1,55 @@
+->Installing TypeScript
+
+Before installing TypeScript, make sure you have Node.js installed on your system.
+
+    1. Check Node.js:
+        Open your terminal and run: node -v
+
+        You should see something like: v22.12.0
+
+        Also check npm: npm -v
+
+    2. Create a Project:
+        Create a new folder: mkdir typescript-with-me >>> cd typescript-with-me
+
+        Initialize a Node.js project: npm init -y
+
+    3. Install TypeScript:
+        Install TypeScript as a development dependency: npm install -D typescript
+
+    4. Check TypeScript Version:
+        npx tsc -v
+        You should get something like: Version 5.x.x
+
+    5. Create TypeScript Configuration:
+        Run: npx tsc --init
+
+        This creates a: tsconfig.json file.
+
+        This file controls how TypeScript should compile your project.
+
+    6. Create Your First TypeScript File:
+        Create: src/index.ts
+
+        Add:
+            const message: string = "Hello TypeScript!";
+            console.log(message);
+            
+    7. Compile TypeScript
+        Run: npx tsc
+        TypeScript will compile your .ts files into JavaScript according to your tsconfig.json.
+
+    ->Basic Setup:
+
+        Your project will look something like:
+
+        typescript-with-me/
+        │
+        ├── src/
+        │   └── index.ts
+        │
+        ├── package.json
+        ├── package-lock.json
+        └── tsconfig.json
+
+        That's it! 🎉 You now have TypeScript installed and ready to use.
