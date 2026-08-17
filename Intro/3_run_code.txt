@@ -1,0 +1,118 @@
+->Running TypeScript Code
+    One important thing to understand is that Node.js doesn't directly run TypeScript files by default.
+
+    We usually:
+        TypeScript (.ts)
+            ↓
+        TypeScript Compiler
+            ↓
+        JavaScript (.js)
+            ↓
+        Node.js
+
+1. Compile TypeScript
+
+Suppose we have:
+
+typescript-with-me/
+├── src/
+│   └── index.ts
+├── tsconfig.json
+└── package.json
+
+Run: npx tsc
+
+TypeScript will compile the .ts file and create the JavaScript file inside the dist folder if you configured:
+
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist"
+  }
+}
+
+Your project will now look like:
+
+typescript-with-me/
+├── src/
+│   └── index.ts
+│
+├── dist/
+│   └── index.js
+│
+├── tsconfig.json
+└── package.json
+2. What is the dist Folder?
+
+dist usually stands for distribution.
+
+It contains the compiled JavaScript code generated from your TypeScript source code.
+
+For example:
+
+src/index.ts
+      ↓
+    tsc
+      ↓
+dist/index.js
+
+You normally write and modify code inside src, while dist contains the generated code.
+
+3. Run the JavaScript File
+
+After compiling, you can run the generated JavaScript file using Node.js:
+
+node dist/index.js
+
+For example, if index.ts contains:
+
+const message: string = "Hello TypeScript!";
+
+
+console.log(message);
+
+Run:
+
+npx tsc
+node dist/index.js
+
+Output:
+
+Hello TypeScript!
+4. A Simple Workflow
+
+Your normal workflow will be:
+
+Write code
+   ↓
+src/index.ts
+   ↓
+npx tsc
+   ↓
+dist/index.js
+   ↓
+node dist/index.js
+   ↓
+Program runs 🚀
+5. Useful package.json Script
+
+Instead of typing the commands every time, you can add scripts:
+
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  }
+}
+
+Now you can simply run:
+
+npm run build
+
+to compile TypeScript, and:
+
+npm start
+
+to run the compiled JavaScript.
+
+Remember: src is where you write your TypeScript, dist is where the compiled JavaScript goes, and Node.js runs the JavaScript inside dist.
