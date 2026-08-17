@@ -1,0 +1,31 @@
+->What is TypeScript?
+    TypeScript is a programming language built on top of JavaScript. 
+    It adds static typing to JavaScript, which means we can define what type of data a variable, function, or object should contain.
+
+    For example:
+        In JavaScript:
+            let age = 25;
+                age = "hello"; // JavaScript allows this
+
+        In TypeScript:
+            let age: number = 25;
+                age = "hello"; // ❌ Error
+
+->TypeScript helps us catch mistakes while writing code instead of finding them later when the application runs.
+
+->The important thing to understand is that TypeScript doesn't replace JavaScript. 
+  TypeScript code is eventually converted (compiled/transpiled) into JavaScript, which can then run in browsers, Node.js, and other JavaScript environments.
+
+->Why do we use TypeScript?
+
+    As applications become larger, JavaScript code can become difficult to maintain. 
+    
+    TypeScript helps by providing:
+        🛡️ Type safety — catches many errors early
+        💡 Better autocomplete — your editor understands your code better
+        🔍 Better readability — types make your code easier to understand
+        🧩 Safer refactoring — easier to change large codebases
+        📦 Better developer experience — especially in React, Node.js, and large applications
+
+->In one sentence:
+    TypeScript is JavaScript with a powerful type system that helps you write safer, more predictable, and maintainable code.
