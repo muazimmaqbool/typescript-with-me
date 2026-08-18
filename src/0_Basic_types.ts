@@ -78,3 +78,19 @@ randomValue=true;
 let value:unknown;
 value=5;
 value="Node";
+
+//functions basic example:
+
+//void: used for functions that do not return anything
+function study(message:string):void{
+    console.log(message);
+    // return 6 // will throw error as ts expects it to not return anything as it's void
+}
+function hey():string{
+    return "Hello";
+    //return 123; // will throw error as it expects to return string 
+}
+function height(num:number):number{
+    const totalHeight:number=50+num;
+    return totalHeight; // returns number
+}
