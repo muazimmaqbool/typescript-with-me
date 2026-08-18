@@ -14,3 +14,10 @@ let username = "Alex"; // Inferred as 'string'
 let IsActive = true;   // Inferred as 'boolean'
 
 //age = "thirty";        // Error: Type 'string' is not assignable to type 'number'
+
+let numbers = [1, 2, 3]; // Inferred as number[]
+let mixed = [1, "apple", true];   // Inferred as (string | number | boolean)[]
+
+function add(a: number, b: number) {
+    return a + b; // Inferred return type is 'number'
+}
