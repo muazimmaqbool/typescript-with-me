@@ -61,3 +61,20 @@ const enum CompactDirection {
   Up = "UP",
   Down = "DOWN"
 }
+
+//Any and Unknow:
+//Now their will be situation when you don't know what type to use (that case will be very rear), in that case you can use Any or Unknow
+//Unknow is considered more safer to use
+
+//'any' completely disables type-checking while 'unknown' enforces strict type-safety
+
+//any examples:
+let randomValue:any="React";
+randomValue=123;
+randomValue=true;
+// console.log(randomValue);
+
+//unknown examples:
+let value:unknown;
+value=5;
+value="Node";
