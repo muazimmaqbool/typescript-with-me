@@ -94,3 +94,9 @@ function height(num:number):number{
     const totalHeight:number=50+num;
     return totalHeight; // returns number
 }
+
+//Null and undefined in ts:
+let nullValue:null=null;
+// let undefinedValue:undefined=undefined;
+// let undefinedValue:undefined=null; //will throw error
+// let undefinedValue:undefined="value"; //will throw error
