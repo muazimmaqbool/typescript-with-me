@@ -16,9 +16,14 @@
     // and npm install -D @types/node
 
     // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    "sourceMap": false,  // Generates the .js.map file
+    "declaration": false, // Generates the .d.ts file
+    "declarationMap": false, //Generates tje .d.ts.map file
+
+    //make them true/uncommented then type tsc and see files inside dist
+    //they are expalained inside intro folders ts_config_file
+
+
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,

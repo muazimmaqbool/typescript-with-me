@@ -226,3 +226,16 @@ Which files should I compile?
       include / exclude
 
 In short: tsconfig.json is the instruction manual that tells the TypeScript compiler how to treat and compile your project.
+
+Important:
+Other Outputs
+    // "sourceMap": true,  // Generates the .js.map file
+    // "declaration": true, // Generates the .d.ts file
+    // "declarationMap": true, //Generates tje .d.ts.map file
+
+    /*
+    if other outputs are true then it will generate more three files apart from .js file for each file inside dist folder:
+      ->index.js.map – A source map file that maps the compiled JavaScript back to your TypeScript code, allowing you to debug your original TypeScript files directly in tools like VS Code or Chrome DevTools
+      ->index.d.ts – A declaration file containing only the type definitions of your code, which is helpful if other developers import your code as a library
+      ->index.d.ts.map file is a declaration source map that connects your generated type definitions (.d.ts file) back to your original source code
+    */
