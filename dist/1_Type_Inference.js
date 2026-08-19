@@ -15,4 +15,4 @@ let mixed = [1, "apple", true]; // Inferred as (string | number | boolean)[]
 function add(a, b) {
     return a + b; // Inferred return type is 'number'
 }
-export {};
+// export {};
