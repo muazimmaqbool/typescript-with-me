@@ -17,7 +17,8 @@ function add(a:number,b:number):number{
     return a+b;
 }
 
-//optional parameter (means making an parameter of the function as optional i.e it's not required) Just add ? after the paramter like this: message?:string to make it optional
+//-> Optional parameter :
+// (means making an parameter of the function as optional i.e it's not required) Just add ? after the paramter like this: message?:string to make it optional
 function greet(name:string,message?:string):string{
     //on message parameter is have added ? which makes it optional;
     if(message){
@@ -27,3 +28,12 @@ function greet(name:string,message?:string):string{
 }
 console.log(greet("Muazim"));
 console.log(greet("Muazim","Join call at 9:30 AM"))
+
+//-> Default paramter:
+// Means an paramter will have default value and can use that if not provided
+function multiple(a:number,b:number=5):number{
+    //when b is not passed it will use it's default value which is 5
+    return a*b
+}
+console.log(multiple(10)) // 50
+console.log(multiple(2,3)) // 6
