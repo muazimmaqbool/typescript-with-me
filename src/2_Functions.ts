@@ -25,3 +25,5 @@ function greet(name:string,message?:string):string{
     }
     return `Hello, ${name}`
 }
+console.log(greet("Muazim"));
+console.log(greet("Muazim","Join call at 9:30 AM"))
