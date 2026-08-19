@@ -37,3 +37,13 @@ function multiple(a:number,b:number=5):number{
 }
 console.log(multiple(10)) // 50
 console.log(multiple(2,3)) // 6
+
+//-> Rest paramter:
+// it will take any number of paramters and that will be inside array
+function sum(...numbers:number[]){
+    return numbers.reduce((total,n)=>total+n,0)
+}
+
+//-> Arrow functions
+const divide=(a:number,b:number):number=>a/b;
+
