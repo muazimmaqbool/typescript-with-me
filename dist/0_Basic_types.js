@@ -84,7 +84,7 @@ function height(num) {
 }
 //Null and undefined in ts:
 let nullValue = null;
-// export {};
+export {};
 // let undefinedValue:undefined=undefined;
 // let undefinedValue:undefined=null; //will throw error
 // let undefinedValue:undefined="value"; //will throw error
