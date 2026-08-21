@@ -33,10 +33,20 @@ const currentUser: User = {
 // 3. Union Type Alias (highly common)
 type Status = "pending" | "approved" | "rejected";
 
-// 4. Function Type Alias
-type Greet = (name: string) => string;
-
-//How to use them:
+//using it:
 function updateStatus(current: Status): void {
   console.log(`Status is ${current}`);
 }
+updateStatus("pending")//works
+// updateStatus("new") // error as updateStatus function can accept only Status values
+
+// 4. Function Type Alias
+type Greet = (name: string) => string;
+
+// The function follows the Greet type: name → string and return value → string
+const greetUser: Greet = (name) => {
+  return `Hi, ${name}!`;
+};
+
+console.log(greetUser("Muazim"));
+// console.log(greetUser(123)) // error
