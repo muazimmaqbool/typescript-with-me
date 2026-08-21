@@ -5,17 +5,17 @@
     You declare it using the type keyword followed by an assignment operator (=)
 */
 // 1. Primitive Alias (acts as documentation)
-type userName= string;
-type userId=string | number;  // (Note: | is called union and will be discussed later)
+type userName = string;
+type userId = string | number; // (Note: | is called union and will be discussed later)
 
-let name:userName="muazim@6655"
+let name: userName = "muazim@6655";
 // name=123456 //error
 
 // let userId=1223 // works fine
 // let userId:userId=true //error as userId will accept string or numbers only
-let userId:userId="abc123" // works
+let userId: userId = "abc123"; // works
 // userId=false // error
-userId=6655 // works fine
+userId = 6655; // works fine
 
 // 2. Object Type Alias
 type User = {
@@ -37,7 +37,7 @@ type Status = "pending" | "approved" | "rejected";
 function updateStatus(current: Status): void {
   console.log(`Status is ${current}`);
 }
-updateStatus("pending")//works
+updateStatus("pending"); //works
 // updateStatus("new") // error as updateStatus function can accept only Status values
 
 // 4. Function Type Alias
@@ -50,3 +50,56 @@ const greetUser: Greet = (name) => {
 
 console.log(greetUser("Muazim"));
 // console.log(greetUser(123)) // error
+
+//Another function example:
+type add = (a: number, b: number) => number;
+
+const addNumbers: add = (a, b) => {
+  return a + b;
+  // return `${a+b}` // error as addNumbers returns only number
+};
+console.log(addNumbers(10, 20));
+
+//Type Aliases vs. Interfaces:
+
+//-> Interfaces can be extended, type aliases cannot
+interface Car {
+  name: string;
+}
+interface modal extends Car {
+    carModal:string
+}
+
+//now this myCar object can take both name and carModal as modal interface extends Car properties
+let myCar:modal={ // if you do like this: myCar:Car ,// it will throw error if you use carModal field also
+    name:"BMW M5",
+    carModal:"2026 xtm5"
+}
+
+//->Interfaces can be declared multiple times and will merge
+interface Bike{
+    name:string
+}
+interface Bike{
+    type:string
+}
+//as these two interfaces are having same name which results in one interface having both name and type
+let myBike:Bike={
+    name:"BMW GS 1250",
+    type:"Sports + Offroad"
+}
+
+//interfaces are commonly used for object shapes 
+//type alias are commonly used for unions/intersections
+
+
+
+// | Interface                                 | Type Alias                                                      |
+// | ----------------------------------------- | --------------------------------------------------------------- |
+// | Mainly used for object/class shapes       | Can define objects, primitives, unions, tuples, functions, etc. |
+// | Supports declaration merging              | Does not support declaration merging                            |
+// | Can be extended with `extends`            | Can use intersections `&`                                       |
+// | Commonly preferred for public object APIs | More flexible for complex types                                 |
+
+//Key Rule to Remember: Aliasing does not create a new type. It simply creates a new name that points to that exact structure.
+//                      When compilation finishes, all type aliases are completely stripped away from the final JavaScript code.
