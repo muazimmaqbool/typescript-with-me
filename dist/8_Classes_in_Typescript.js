@@ -6,10 +6,6 @@
 //Basic Class Structure:
 //A standard TypeScript class includes typed field declarations, a constructor function to initialize those fields, and class methods.
 class Employee {
-    // 1. Field Declarations
-    id;
-    name;
-    // 2. Constructor (while during creation of object of type Employee class)
     constructor(id, name) {
         this.id = id;
         this.name = name;
