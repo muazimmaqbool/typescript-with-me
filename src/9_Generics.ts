@@ -101,3 +101,25 @@ class StorageBox<T> {
 }
 
 const secureString = new StorageBox<string>("SecretPassphrase");
+
+
+//Example 5: Multiple Type Parameters:
+function mergePairs<K, V>(key: K, value: V): [K, V] {
+    return [key, value];
+}
+
+const productPair = mergePairs("ItemID", 9553);
+
+//Example 6: Default Generic Values:
+//Just like normal JavaScript default function arguments, you can provide a fallback default type.
+// If no type argument is provided, T defaults to a string
+interface ElementWrapper<T = string> {
+    element: T;
+}
+
+/*
+->Benefits of Using Generics:
+    - Strict Type Safety: Preserves clear type relationships across inputs, internal logic, and outputs.
+    - Elimination of Duplication: Author a single dynamic block of code instead of copy-pasting code definitions for dozens of unique data states.
+    - Predictable Autocomplete: IDE extensions read inferred types to continuously populate highly accurate intellisense code hints as you code.
+*/
