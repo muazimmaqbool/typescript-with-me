@@ -33,4 +33,4 @@ Final Price = ₹200,000 - ₹30,000
             = ₹170,000
 */
 console.log("final Price after discount:", laptop.getFinalPrice(discountPrice));
-// export {};
+export {};
