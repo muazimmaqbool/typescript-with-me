@@ -8,4 +8,11 @@ type status="pending" | "approved" | "rejected"; // the status can take only thr
 let response:status="approved";//works
 // response="failed"; //error 
 
+type Branch="CSE" | "Civil" |  "Mechanical" | "Electrical" | "E & C";
+function getInfo(branch:Branch){ // now this function can take arguments which are defined in Branch type
+    console.log("Showing resultinformation of branch:",branch)
+}
+// getInfo("CSE") //works
+// getInfo("Robotics") //error
+
 //2-> Intersection Types (AND):
