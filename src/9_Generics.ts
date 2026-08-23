@@ -19,7 +19,7 @@ const output2 = functionOne(1234);
 function myFunction<myType>(arg: myType): myType {
   return arg;
 }
-let one = myFunction("this is string");
+let one = myFunction("this is string"); //Recommended
 let two = myFunction(3210); // or let two =myFunction<number>(1235)
 //now when you hover on the outputs one and two you will see the proper return type also
 
@@ -36,3 +36,45 @@ function getFirst<T>(arr: T[]): T | undefined {
 let myNum=getFirst([1,2,3])
 let item=getFirst(["abc","def","ghi"]) // defining type is optional: let item=getFirst<string>(["abc","def","ghi"])
 //now when you hover over myNum and item you will see also returned type also with | undefined
+
+//Example 3: Generic with interfaces
+interface KeyValuePair<K,V>{
+    key:K,
+    value:V,
+}
+let stringNumberPair:KeyValuePair<String,Number>={
+    key:"id",
+    value:6655
+}
+//the above one is simple generic with interface but generic with interfaces can go complex:
+ interface User<K,V>{
+    key:K,
+    value:{
+        name:string,
+        id:number
+    },
+}
+let userInfo:User<String,Number>={
+    key:"id",
+    value:{
+        name:"hashim",
+        id:123456
+    }
+}   
+
+//another example:
+interface ApiResponse<DataPayload> {
+    status: number;
+    errors: string[] | null;
+    data: DataPayload; // This structure changes based on what you request
+}
+
+interface UserNew { name: string; id: number; }
+interface Product { title: string; price: number; }
+
+// Easily reuse the exact same interface layout for completely unique payloads
+const userResponse: ApiResponse<UserNew> = {
+    status: 200,
+    errors: null,
+    data: { name: "Alice", id: 101 }
+};
