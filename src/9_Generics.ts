@@ -80,6 +80,7 @@ const userResponse: ApiResponse<UserNew> = {
 };
 
 //Example 3: Generic Constraints (generic can extend interface):
+//By default, a generic variable can represent any type. You can restrict what types are acceptable by using the extends keyword to declare constraints.
 interface LengthWise{
     length:number;
 }
@@ -90,3 +91,13 @@ function getLength<T extends LengthWise>(arg:T):T{
 
 getLength("Hello") //works
 getLength([1,2,3]) //works
+
+//Example 4: Generic with classes:
+class StorageBox<T> {
+    private contents: T;
+    constructor(value: T) { this.contents = value; }
+    
+    getContents(): T { return this.contents; }
+}
+
+const secureString = new StorageBox<string>("SecretPassphrase");
