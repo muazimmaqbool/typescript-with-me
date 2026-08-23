@@ -4,7 +4,6 @@
     ->The core difference is that Type Assertions are compile-time overrides where you tell the compiler to trust your judgment, 
     ->while Type Guards are runtime checks that safely narrow down types within a block of code
 */
-//Note: These two are some of the overlooked features of typescript:
 
 //1. Type Assertions (as Keyword):
     /* A Type Assertion tells TypeScript, "Trust me, I know what I'm doing, treat this variable as this specific type.
@@ -32,8 +31,19 @@
     const rawData: unknown = "Hello World";
     const strLength3 = (<string>rawData).length; 
 
-
+//Very very usefull typescript feature
 //2. Type Guards (Runtime Narrowing):
         /* A Type Guard is an expression or function that performs a literal check on a value at runtime. 
            Once the check passes, TypeScript automatically narrows down the type inside that conditional block
         */
+
+    // Example:
+        function processValue(value:string|number){
+            if(typeof value==="string"){
+                //Note: now typescript is smart enough to know that value can be string here so the moment i type dot (.) after value it will give me all string methods:
+                console.log(value.toUpperCase());
+            }else{
+                //Now typescript knows inside else value can be number so it will give me all numbersic methods:
+                console.log(value.toFixed(2))
+            }
+        }
