@@ -78,3 +78,15 @@ const userResponse: ApiResponse<UserNew> = {
     errors: null,
     data: { name: "Alice", id: 101 }
 };
+
+//Example 3: Generic Constraints (generic can extend interface):
+interface LengthWise{
+    length:number;
+}
+function getLength<T extends LengthWise>(arg:T):T{
+    console.log("Length foundL",arg.length)
+    return arg
+}
+
+getLength("Hello") //works
+getLength([1,2,3]) //works
