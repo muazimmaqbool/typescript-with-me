@@ -49,3 +49,19 @@ let myTodo: ReadonlyTodo = {
 // myTodo.completed = true; //works fine if you have done this : let myTodo: Todo = {....}
 
 // myTodo.completed=true; //error when used like this: let myTodo: ReadonlyTodo = {...}
+
+// 4: Pick : pick specific properties
+//suppose you want to make another todo with only with title and completed:
+//one way:
+    // type todoNew={
+    //   title:string,
+    //   completed:boolean
+    // }
+
+//another way we can pick just two prot=perties from Todo interface:
+type NewTodo=Pick<Todo,"title"|"completed">
+//now when you hover over NewTodo you will see it has two properties only title and completed
+let todo2:NewTodo={
+    title:"tasknew",
+    completed:true
+}
