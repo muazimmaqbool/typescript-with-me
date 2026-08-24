@@ -18,3 +18,21 @@ let test:partialTodo={
 // let test2:Todo={
 //     title:"Todo one"
 // } //error
+
+// 2: Required - makes all the properties as required
+type RequiredTodo=Required<Todo>;
+//now if you hover on it you will see all fields are now required
+let test3:RequiredTodo={
+    title:"abc",
+    completed:true,
+    assignedTo:"user1",
+    description:"asdfga",
+    crearedAt:new Date()
+}
+//error if you don't provide descrption and createdAt
+
+// let test3:Todo={
+//     title:"abc",
+//     completed:true,
+//     assignedTo:"user1"
+// } // works fine
