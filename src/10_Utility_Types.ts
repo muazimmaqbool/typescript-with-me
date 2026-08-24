@@ -65,3 +65,8 @@ let todo2:NewTodo={
     title:"tasknew",
     completed:true
 }
+
+// 5: Omit : omit specific properties
+//it's opposite of pick, here you want to create another todo but same Properties as Todo interface but without createdAt property
+type TodoUpdated=Omit<Todo,"createdAt"> // or type TodoUpdated=Omit<Todo,"createdAt" | "title">
+//now hover over TodoUpdated
