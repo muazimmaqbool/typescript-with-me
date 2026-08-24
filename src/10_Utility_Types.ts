@@ -113,3 +113,28 @@ let pages: Merged = {
     url: "/contact",
   },
 };
+
+// ---------------------------------------------------------------------------------------
+
+// 7: ReturnType ; get return type of the function
+//ReturnType<Type> is a built-in utility type that extracts and constructs a new type from the return value of a function type
+function createUser(){
+    return{
+        id:1,
+        name:"Basit",
+        email:"basit51@gmail.com"
+    }
+}
+//now we want to know what this function return maybe we can use it somewhere else
+type UserType=ReturnType<typeof createUser>
+//now when you over on UserType you will something like this:
+                                                            // type UserType = {
+                                                            //     id: number;
+                                                            //     name: string;
+                                                            //     email: string;
+                                                            //  }
+let userNew:UserType={
+    id:123,
+    name:"abc",
+    email:"abc@gmail.com"
+}
