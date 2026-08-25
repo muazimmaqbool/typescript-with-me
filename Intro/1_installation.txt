@@ -24,13 +24,11 @@ Before installing TypeScript, make sure you have Node.js installed on your syste
     5. Create TypeScript Configuration:
         Run: npx tsc --init
 
-        This creates a: tsconfig.json file.
-
+        This creates a: tsconfig.json file
         This file controls how TypeScript should compile your project.
 
     6. Create Your First TypeScript File:
         Create: src/index.ts
-
         Add:
             const message: string = "Hello TypeScript!";
             console.log(message);
@@ -40,7 +38,6 @@ Before installing TypeScript, make sure you have Node.js installed on your syste
         TypeScript will compile your .ts files into JavaScript according to your tsconfig.json.
 
     ->Basic Setup:
-
         Your project will look something like:
 
         typescript-with-me/
@@ -52,4 +49,4 @@ Before installing TypeScript, make sure you have Node.js installed on your syste
         ├── package-lock.json
         └── tsconfig.json
 
-        That's it! 🎉 You now have TypeScript installed and ready to use.
+        That's it! You now have TypeScript installed and ready to use.
