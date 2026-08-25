@@ -31,3 +31,15 @@ async function fetchData<T>(url:string):Promise<T>{
     return response.json();
 }
 fetchData<string>("test-api-call")
+
+//Example 4: Enforces that this promise must resolve to a string
+const fetchUserData = (): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const success = true;
+    if (success) {
+      resolve("User data loaded"); // Must match the generic type
+    } else {
+      reject(new Error("Failed to load user data")); // Always use Error objects
+    }
+  });
+};
