@@ -48,3 +48,12 @@ function handleResponse(status:HttpStatus):void{
         console.log("Success!")
     }
 }
+
+//Important:
+//Heterogeneous Enums:
+//You can mix string and numeric values within the same enum, though this practice is generally discouraged.
+enum Mixed {
+  No = 0,
+  Yes = "YES"
+}
+let test:Mixed=Mixed.No; //working
