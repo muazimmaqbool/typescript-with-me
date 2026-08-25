@@ -17,9 +17,7 @@
   TypeScript code is eventually converted (compiled/transpiled) into JavaScript, which can then run in browsers, Node.js, and other JavaScript environments.
 
 ->Why do we use TypeScript?
-
     As applications become larger, JavaScript code can become difficult to maintain. 
-    
     TypeScript helps by providing:
         🛡️ Type safety — catches many errors early
         💡 Better autocomplete — your editor understands your code better
