@@ -9,11 +9,10 @@ let inferredString="this is the string"; //here inferredString will accept value
 
 let myNum=6655;
 // myNum={a:"1"} // error as myNum will only accept numbers as it's first value is number
+myNum=1234;  // works fine
 
 let username = "Alex"; // Inferred as 'string'
 let IsActive = true;   // Inferred as 'boolean'
-
-//age = "thirty";        // Error: Type 'string' is not assignable to type 'number'
 
 let numbers = [1, 2, 3]; // Inferred as number[]
 let mixed = [1, "apple", true];   // Inferred as (string | number | boolean)[]
@@ -21,3 +20,4 @@ let mixed = [1, "apple", true];   // Inferred as (string | number | boolean)[]
 function add(a: number, b: number) {
     return a + b; // Inferred return type is 'number'
 }
+//if you hover over 'add' you will see this: function add(a: number, b: number): number
