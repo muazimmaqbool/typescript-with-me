@@ -18,12 +18,13 @@ interface User {
 
 let user: User = {
   name: "Muazim",
-  enroll: 6655, //enroll:"6655" will throw error
+  enroll: 6655,
   isPresent: true,
-  //email:"muazim@gmail.com" // removing this won't throw error
+  //email:"muazim@gmail.com" // removing this won't throw error as email is optional in User interface
   id:16206655, // this can't be updated it will throw error, see by trying this user.id=6655
 }
 // user.id=6655; //error as id is readonly
+
 /*
 ->An interface in TypeScript is a powerful contract that defines the exact structural "shape" an object must follow. 
  It enforces compile-time type-checking by establishing a blueprint for properties and methods without providing their actual implementation code
