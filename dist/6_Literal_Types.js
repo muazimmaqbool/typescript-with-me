@@ -16,6 +16,6 @@ let apiResult = {
     status: "success", // can be either success or error,
     data: "Your api is running",
     // message:"Api call failed" 
-    //error as status is success the it expects data to be used and if you use message then it will throuw error, as goes if status is error then using data will through error
+    //error as status is success, it expects data to be used and if you use message then it will throuw error, as goes if status is error then using data will through error
 };
 export {};

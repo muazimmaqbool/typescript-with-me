@@ -1,6 +1,5 @@
 let name = "muazim@6655";
 // name=123456 //error
-// let userId=1223 // works fine
 // let userId:userId=true //error as userId will accept string or numbers only
 let userId = "abc123"; // works
 // userId=false // error
@@ -9,16 +8,18 @@ userId = 6655; // works fine
 const currentUser = {
     id: 101,
     name: "Alice",
-    isAdmin: true, // sAdmin: "true" -> error
+    isAdmin: true, // isAdmin: "true" -> error
+    // role:"SuperAdmin" //Works fine as role is nor required it's optional
 };
 //using it:
 function updateStatus(current) {
     console.log(`Status is ${current}`);
 }
-updateStatus("pending"); //works
+updateStatus("pending"); // works
 // The function follows the Greet type: name → string and return value → string
 const greetUser = (name) => {
     return `Hi, ${name}!`;
+    // return 1234; // error
 };
 console.log(greetUser("Muazim"));
 const addNumbers = (a, b) => {

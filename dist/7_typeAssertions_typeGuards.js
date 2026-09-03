@@ -10,7 +10,7 @@
        ->Common Use Cases:
             Fetching elements from the DOM where you know the exact element type.
             Working with an API response typed as any or unknown.
-    */
+*/
 //Example:
 //Basic Example:
 let someValue = "follow me on github @muazimmaqbool";
@@ -30,7 +30,7 @@ const strLength3 = rawData.length;
 //2. Type Guards (Runtime Narrowing):
 /* A Type Guard is an expression or function that performs a literal check on a value at runtime.
            Once the check passes, TypeScript automatically narrows down the type inside that conditional block
-        */
+*/
 // Example:
 function processValue(value) {
     if (typeof value === "string") {
@@ -58,7 +58,7 @@ function travel(vehicle) {
     if (vehicle instanceof Car) {
         return vehicle.drive(); // TS narrows 'vehicle' to Car, so only methods of Car class are shown
     }
-    return vehicle.sail(); // TS narrows 'vehicle' to Boat, so only methods of Board class care shown
+    return vehicle.sail(); // TS narrows 'vehicle' to Boat, so only methods of Boat class are shown
 }
 export {};
 //Note Class in typescript are discussed next ->

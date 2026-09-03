@@ -6,9 +6,9 @@ let student = {
 };
 let user = {
     name: "Muazim",
-    enroll: 6655, //enroll:"6655" will throw error
+    enroll: 6655,
     isPresent: true,
-    //email:"muazim@gmail.com" // removing this won't throw error
+    //email:"muazim@gmail.com" // removing this won't throw error as email is optional in User interface
     id: 16206655, // this can't be updated it will throw error, see by trying this user.id=6655
 };
 let laptop = {

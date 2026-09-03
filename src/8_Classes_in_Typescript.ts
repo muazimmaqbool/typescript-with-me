@@ -28,3 +28,38 @@ console.log(emp.getDetails()); // Output: Alice (ID: 101)
 
 //const emp2 = new Employee("Bob", 102); // Error: Argument of type 'string' is not assignable to parameter of type 'number'.
 
+
+//Another example:
+class Car{
+  name: string;
+  model: string;
+  color: string;
+  petrol:number;
+
+  constructor(name: string, model: string, color: string){
+    this.name = name;
+    this.model = model;
+    this.color = color;
+    this.petrol = 0;
+  }
+  getCarDetails():string{
+    return `${this.name} ${this.model} ${this.color}`;
+  }
+  updateColor(newColor: string): void{
+    this.color = newColor;
+  }
+  addPetrol(liters:number):void{
+    this.petrol += liters;
+  }
+  getPetrolStatus():string{
+    return `Current Petrol: ${this.petrol} liters`;
+  }
+}
+const myCar = new Car("Toyota", "Corolla", "Red");
+console.log(myCar.getCarDetails());
+console.log(`Initial Petrol: ${myCar.petrol} liters`);
+myCar.addPetrol(20);
+console.log(`Updated Petrol: ${myCar.petrol} liters`);
+myCar.updateColor("Blue");
+console.log(`Updated Car Details: ${myCar.getCarDetails()}`);
+console.log("Petrol Status: " + myCar.getPetrolStatus());
