@@ -25,3 +25,6 @@ class Employee {
 // Creating an instance
 const emp = new Employee(101, "Alice");
 console.log(emp.getDetails()); // Output: Alice (ID: 101)
+
+//const emp2 = new Employee("Bob", 102); // Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+
