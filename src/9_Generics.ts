@@ -5,7 +5,7 @@ Important:
     They act like variables for types, allowing you to pass types as arguments into functions, interfaces, type aliases, and classes.
 
     Instead of freezing a specific type (like string or number) or resorting to type-safety killers like any, 
-    generics use a placeholder—conventionally <T>—which gets dynamically defined when the code is executed
+    generics use a placeholder conventionally <T> which gets dynamically defined when the code is executed
 */
 //Example 1:
 function functionOne(arg: any) {
@@ -13,7 +13,7 @@ function functionOne(arg: any) {
 }
 const output1 = functionOne("typescript");
 const output2 = functionOne(1234);
-//if you hover over the output1 and output2 you will notice typescript doesn't know what type the function return so outputs will be of any type
+//if you hover over the output1 and output2 you will notice typescript doesn't know what type the function return so outputs will be of 'any' type
 //Now let's use generics
 
 function myFunction<myType>(arg: myType): myType {
